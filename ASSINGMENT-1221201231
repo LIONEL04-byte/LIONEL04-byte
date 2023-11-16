@@ -1,0 +1,37 @@
+import datetime
+
+class RestaurantOrder:
+    def __init__(self, date, time, price):
+        self.date = date
+        self.time = time
+        self.price = price
+
+    def calculate_total(self):
+        # You can add tax or any other charges to the total calculation if needed
+        total = self.price
+        return total
+
+    def display_order_summary(self, total):
+        print("\nOrder Summary:")
+        print("Date: {}".format(self.date))
+        print("Time: {}".format(self.time))
+        print("Price: ${}".format(self.price))
+        print("Total: ${}".format(total))
+
+def main():
+    # Get user input
+    date = input("Enter the date (2020-01-28): ")
+    time = input("Enter the time (HH:MM AM/PM): ")
+    price = float(input("Enter the price: $"))
+
+    # Create an instance of the Restaurant Order class
+    order = RestaurantOrder(date, time, price)
+
+    # Calculate the total
+    total = order.calculate_total()
+
+    # Display order summary
+    order.display_order_summary(total)
+
+if __name__ == "__main__":
+    main()
